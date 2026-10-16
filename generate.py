@@ -576,23 +576,50 @@ kubectl debug node/node-1 --image=busybox:1.36   # node-level debugging shell"""
      "note": "kubectl debug attaches an ephemeral debug container to a running pod — on 1.25+ clusters ephemeral containers are stable, so you debug without restarting the pod."},
 ]
 
+# ---------------------------------------------------------------------------
+# Expansion (batch 2): the other 9 repos. pages2.py holds REPOS2 + PAGES2;
+# every code line there was pulled verbatim from the repos' CHEATSHEET.md /
+# README.md by an extraction pass, and verify_against_sources() re-checks
+# them against the source files on every build.
+# ---------------------------------------------------------------------------
+try:
+    from pages2 import REPOS2, PAGES2
+    REPOS.update(REPOS2)
+    PAGES.extend(PAGES2)
+except ImportError:
+    pass
+
 
 def norm(s):
     return " ".join(s.split())
 
 
 def verify_against_sources():
-    """Every code line must exist in the repo's CHEATSHEET.md (whitespace-normalized)."""
+    """Every code line must exist in the repo's source files
+    (whitespace-normalized). Repos may list several "sources"; repos with
+    verify == "fragment" match against the whole normalized source text
+    (their content blocks are prose-table fragments, not full lines)."""
     errors = []
     for key, repo in REPOS.items():
-        path = os.path.join(SRC_DIR, repo["source"])
-        with open(path, encoding="utf-8") as f:
-            src_lines = {norm(line) for line in f}
+        paths = [os.path.join(SRC_DIR, rel) for rel in (repo.get("sources") or [repo["source"]])]
+        src_lines = set()
+        chunks = []
+        for path in paths:
+            with open(path, encoding="utf-8") as f:
+                text = f.read()
+            src_lines |= {norm(line) for line in text.split("\n") if norm(line)}
+            chunks.append(text)
+        src_text = norm("\n".join(chunks))
+        fragment = repo.get("verify") == "fragment"
         for p in PAGES:
             if p["repo"] != key:
                 continue
             for line in p["code"].split("\n"):
-                if line.strip() and norm(line) not in src_lines:
+                n = norm(line)
+                if not n:
+                    continue
+                ok = (n in src_text) if fragment else (n in src_lines)
+                if not ok:
                     errors.append(f"{key}/{p['slug']}: line not in source: {line!r}")
     return errors
 
@@ -649,9 +676,11 @@ def render_index():
     parts.append("<head>")
     parts.append('<meta charset="utf-8">')
     parts.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
-    parts.append(f"<title>{SITE_NAME} — Git, SQL &amp; kubectl, one question per page</title>")
+    parts.append(f"<title>{SITE_NAME} — one command, one question, one page</title>")
     parts.append('<meta name="description" content="One command, one real-world scenario, one page. '
-                 'Searchable command pages for Git, SQL and kubectl, drawn from tested open-source cheatsheets.">')
+                 '300 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, '
+                 'the terminal, free Adobe alternatives and self-hosted SaaS replacements — '
+                 'drawn from tested open-source cheatsheets.">')
     parts.append(f"<style>{CSS}</style>")
     parts.append("</head>")
     parts.append("<body>")
@@ -703,6 +732,7 @@ def main():
 
     for p in PAGES:
         path = os.path.join(BASE, p["repo"], p["slug"] + ".html")
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path, "w", encoding="utf-8") as f:
             f.write(render_page(p))
     with open(os.path.join(BASE, "index.html"), "w", encoding="utf-8") as f:

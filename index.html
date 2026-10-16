@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Cheatsheet Pages — Git, SQL &amp; kubectl, one question per page</title>
-<meta name="description" content="One command, one real-world scenario, one page. Searchable command pages for Git, SQL and kubectl, drawn from tested open-source cheatsheets.">
+<title>Cheatsheet Pages — one command, one question, one page</title>
+<meta name="description" content="One command, one real-world scenario, one page. 300 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, the terminal, free Adobe alternatives and self-hosted SaaS replacements — drawn from tested open-source cheatsheets.">
 <style>
 :root{color-scheme:dark}
 *{box-sizing:border-box}
@@ -124,6 +124,267 @@ ul.pages li:last-child{border-bottom:none}
 <li><a href="kubectl/list-create-namespaces.html">How to list and create namespaces — kubectl get ns / create namespace</a></li>
 <li><a href="kubectl/set-default-namespace.html">How to set a default namespace and stop typing -n — kubectl config set-context</a></li>
 <li><a href="kubectl/debug-ephemeral-container.html">How to debug a running pod without restarting it — kubectl debug</a></li>
+</ul>
+<h2>FFmpeg Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/ffmpeg-cheatsheet">https://github.com/Ezra-Zhao/ffmpeg-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="ffmpeg/install-ffmpeg-and-check-codecs.html">How to install FFmpeg and check which codecs your build has</a></li>
+<li><a href="ffmpeg/convert-anything-to-mp4.html">How to convert any video to MP4 (H.264 + AAC) — ffmpeg</a></li>
+<li><a href="ffmpeg/convert-mp4-to-webm.html">How to convert MP4 to WebM (VP9 + Opus) — ffmpeg</a></li>
+<li><a href="ffmpeg/remux-mkv-to-mp4-no-reencode.html">How to convert MKV to MP4 without re-encoding — ffmpeg remux</a></li>
+<li><a href="ffmpeg/compress-video-crf.html">How to compress a video with FFmpeg — CRF explained</a></li>
+<li><a href="ffmpeg/encoding-presets-speed-vs-size.html">FFmpeg presets: trade encoding speed for file size</a></li>
+<li><a href="ffmpeg/two-pass-encoding-target-size.html">How to encode a video to an exact file size — two-pass FFmpeg</a></li>
+<li><a href="ffmpeg/extract-audio-mp3.html">How to extract audio from a video as MP3 — ffmpeg</a></li>
+<li><a href="ffmpeg/extract-audio-m4a.html">How to extract audio from a video as M4A (AAC) — ffmpeg</a></li>
+<li><a href="ffmpeg/extract-audio-without-reencoding.html">How to extract audio without re-encoding — ffmpeg -c:a copy</a></li>
+<li><a href="ffmpeg/video-to-gif-with-palette.html">How to turn a video into a good-looking GIF — the ffmpeg palette trick</a></li>
+<li><a href="ffmpeg/cut-video-fast-seek.html">How to cut a clip out of a video, fast — ffmpeg -ss before -i</a></li>
+<li><a href="ffmpeg/cut-video-frame-accurate.html">How to cut a video frame-accurately — ffmpeg -ss after -i</a></li>
+<li><a href="ffmpeg/join-videos-concat.html">How to join videos without re-encoding — ffmpeg concat</a></li>
+<li><a href="ffmpeg/scale-video-to-720p.html">How to resize a video to 720p — ffmpeg scale filter</a></li>
+<li><a href="ffmpeg/scale-video-by-width.html">How to resize a video by width and keep the aspect ratio — ffmpeg</a></li>
+<li><a href="ffmpeg/crop-video-region.html">How to crop a region out of a video — ffmpeg crop</a></li>
+<li><a href="ffmpeg/add-watermark-overlay.html">How to put a watermark on a video — ffmpeg overlay</a></li>
+<li><a href="ffmpeg/burn-subtitles-into-video.html">How to burn subtitles into a video — ffmpeg subtitles filter</a></li>
+<li><a href="ffmpeg/drawtext-overlay.html">How to add text to a video without extra files — ffmpeg drawtext</a></li>
+<li><a href="ffmpeg/extract-poster-frame.html">How to grab a thumbnail frame from a video — ffmpeg</a></li>
+<li><a href="ffmpeg/dump-frames-as-images.html">How to export video frames as images — ffmpeg fps filter</a></li>
+<li><a href="ffmpeg/replace-audio-track.html">How to replace a video&#x27;s audio track — ffmpeg -map</a></li>
+<li><a href="ffmpeg/stream-file-to-rtmp.html">How to stream a file to YouTube Live or Twitch — ffmpeg RTMP</a></li>
+<li><a href="ffmpeg/batch-convert-folder.html">How to batch-convert a folder of videos — ffmpeg shell loops</a></li>
+</ul>
+<h2>Docker Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/docker-cheatsheet">https://github.com/Ezra-Zhao/docker-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="docker/pull-image.html">How to download a Docker image — docker pull</a></li>
+<li><a href="docker/list-images.html">How to list Docker images on your machine — docker images</a></li>
+<li><a href="docker/build-image-from-dockerfile.html">How to build a Docker image from a Dockerfile — docker build</a></li>
+<li><a href="docker/tag-and-push-image.html">How to tag and push a Docker image to a registry</a></li>
+<li><a href="docker/remove-images-and-prune.html">How to delete Docker images and reclaim disk — rmi and image prune</a></li>
+<li><a href="docker/run-container.html">How to run a Docker container — docker run with ports and volumes</a></li>
+<li><a href="docker/list-containers.html">How to list Docker containers — docker ps and ps -a</a></li>
+<li><a href="docker/start-stop-restart-container.html">How to start, stop and restart a Docker container</a></li>
+<li><a href="docker/remove-container.html">How to delete a Docker container — docker rm</a></li>
+<li><a href="docker/throwaway-container-run-rm.html">How to run a throwaway Docker container — docker run --rm</a></li>
+<li><a href="docker/exec-shell-in-running-container.html">How to open a shell inside a running container — docker exec -it</a></li>
+<li><a href="docker/container-logs-follow-tail.html">How to read a container&#x27;s logs — docker logs -f --tail</a></li>
+<li><a href="docker/copy-files-with-docker-cp.html">How to copy files in and out of a container — docker cp</a></li>
+<li><a href="docker/volumes-persistent-data.html">How to keep data in Docker volumes — create, list, delete</a></li>
+<li><a href="docker/container-networks.html">How to connect containers on a Docker network</a></li>
+<li><a href="docker/dockerfile-essential-instructions.html">The Dockerfile instructions that matter — FROM, WORKDIR, COPY, RUN, EXPOSE, CMD</a></li>
+<li><a href="docker/dockerfile-minimal-working-example.html">A minimal working Dockerfile — a Python app, built and run</a></li>
+<li><a href="docker/compose-up-and-down.html">How to start and stop a multi-container app — docker compose up and down</a></li>
+<li><a href="docker/compose-operate-the-stack.html">How to operate a running Compose stack — ps, logs, exec</a></li>
+<li><a href="docker/compose-sample-web-and-database.html">Sample compose.yaml — a web service with a Postgres database</a></li>
+<li><a href="docker/system-prune-cleanup.html">How to clean up everything unused in Docker — docker system prune</a></li>
+<li><a href="docker/container-prune.html">How to remove only stopped containers — docker container prune</a></li>
+<li><a href="docker/inspect-container-state.html">How to inspect a Docker object — docker inspect</a></li>
+<li><a href="docker/stats-and-top.html">How to see what a container is doing — docker stats and docker top</a></li>
+<li><a href="docker/container-wont-start-drill.html">Container won&#x27;t start? The three-step Docker drill</a></li>
+</ul>
+<h2>curl Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/curl-cheatsheet">https://github.com/Ezra-Zhao/curl-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="curl/simple-get-request.html">How to make a GET request with curl</a></li>
+<li><a href="curl/post-json.html">How to POST JSON with curl</a></li>
+<li><a href="curl/put-replace-resource.html">How to replace a resource with curl — PUT</a></li>
+<li><a href="curl/delete-resource.html">How to delete a resource with curl — DELETE</a></li>
+<li><a href="curl/patch-partial-update.html">How to partially update a resource with curl — PATCH</a></li>
+<li><a href="curl/head-request-headers-only.html">How to check a URL&#x27;s headers without downloading the body — curl -I</a></li>
+<li><a href="curl/custom-headers.html">How to send custom headers with curl — -H</a></li>
+<li><a href="curl/bearer-token-auth.html">How to call an API with a Bearer token — curl Authorization header</a></li>
+<li><a href="curl/basic-auth.html">How to use Basic auth with curl — -u</a></li>
+<li><a href="curl/custom-user-agent.html">How to set a custom User-Agent with curl — -A</a></li>
+<li><a href="curl/post-form-data-urlencode.html">How to POST form data with curl — and let curl URL-encode it</a></li>
+<li><a href="curl/upload-file-multipart.html">How to upload a file with curl — -F multipart form</a></li>
+<li><a href="curl/show-response-headers.html">How to see response headers with curl — -i</a></li>
+<li><a href="curl/save-response-to-file.html">How to save curl output to a file — -o vs -O</a></li>
+<li><a href="curl/silent-mode-show-errors.html">How to silence curl&#x27;s progress bar but keep the errors — -sS</a></li>
+<li><a href="curl/measure-timing-and-status-code.html">How to measure response time and status code with curl — -w</a></li>
+<li><a href="curl/verbose-mode.html">How to see the whole HTTP conversation — curl -v</a></li>
+<li><a href="curl/trace-ascii-full-dump.html">How to get a full curl trace — --trace-ascii</a></li>
+<li><a href="curl/which-http-version.html">How to check which HTTP version curl negotiated — %{http_version}</a></li>
+<li><a href="curl/skip-tls-verification-debug.html">How to skip TLS certificate checks with curl — -k (debug only)</a></li>
+<li><a href="curl/resume-interrupted-download.html">How to resume an interrupted download with curl — -C -</a></li>
+<li><a href="curl/limit-download-speed.html">How to limit curl&#x27;s download speed — --limit-rate</a></li>
+<li><a href="curl/retry-failed-downloads.html">How to make curl retry failed downloads — --retry</a></li>
+<li><a href="curl/cookies-and-sessions.html">How to log in once and reuse the session with curl — cookie jars</a></li>
+<li><a href="curl/route-through-proxy.html">How to route curl through a proxy — HTTP and SOCKS5</a></li>
+</ul>
+<h2>Regex Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/regex-cheatsheet">https://github.com/Ezra-Zhao/regex-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="regex/dot-any-character.html">What does . match in regex? Any character except a newline</a></li>
+<li><a href="regex/shorthand-classes-digit-word-space.html">Regex shorthands: \d for digits, \w for word characters, \s for whitespace</a></li>
+<li><a href="regex/anchors-start-and-end.html">How to anchor a regex to the start or end — ^ and $</a></li>
+<li><a href="regex/word-boundary.html">How to match whole words only in regex — \b word boundary</a></li>
+<li><a href="regex/quantifiers-star-plus-question.html">Regex quantifiers * + ? — zero or more, one or more, optional</a></li>
+<li><a href="regex/quantifier-exact-counts.html">How to repeat a pattern an exact number of times — {n}, {n,}, {n,m}</a></li>
+<li><a href="regex/greedy-vs-lazy.html">Greedy vs lazy matching in regex — .* vs .*?</a></li>
+<li><a href="regex/character-classes-and-negation.html">How to match one character from a set — [...] and [^...]</a></li>
+<li><a href="regex/alternation-or.html">How to match this or that in regex — | alternation</a></li>
+<li><a href="regex/capturing-groups.html">How to capture parts of a match — (...) groups</a></li>
+<li><a href="regex/named-capturing-groups.html">How to name a capture group — (?&lt;name&gt;...)</a></li>
+<li><a href="regex/non-capturing-groups.html">How to group without capturing — (?:...)</a></li>
+<li><a href="regex/backreferences.html">How to match the same text twice — backreferences with \1</a></li>
+<li><a href="regex/lookahead-assertions.html">Lookahead in regex: require (or forbid) what follows — (?=...) and (?!...)</a></li>
+<li><a href="regex/lookbehind-assertions.html">Lookbehind in regex: require (or forbid) what precedes — (?&lt;=...) and (?&lt;!...)</a></li>
+<li><a href="regex/email-pattern.html">A practical regex for email addresses</a></li>
+<li><a href="regex/url-pattern.html">A practical regex for finding URLs in text</a></li>
+<li><a href="regex/international-phone-pattern.html">A loose regex for international phone numbers</a></li>
+<li><a href="regex/ipv4-address-strict.html">A strict regex for IPv4 addresses — every octet really 0-255</a></li>
+<li><a href="regex/date-yyyy-mm-dd-pattern.html">A regex for dates in YYYY-MM-DD format</a></li>
+<li><a href="regex/html-tag-pattern.html">A quick regex for HTML tags — and when not to use it</a></li>
+<li><a href="regex/trim-whitespace-pattern.html">How to trim leading and trailing whitespace with regex</a></li>
+<li><a href="regex/replacement-backreferences.html">Backreferences in replacements — $1 vs \1, and grep -P in the terminal</a></li>
+<li><a href="regex/catastrophic-backtracking.html">Catastrophic backtracking: the regex that hangs — and the fix</a></li>
+<li><a href="regex/dont-parse-html-with-regex.html">Why you should not parse HTML with regex</a></li>
+</ul>
+<h2>jq Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/jq-cheatsheet">https://github.com/Ezra-Zhao/jq-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="jq/pretty-print-json.html">How to pretty-print JSON with jq</a></li>
+<li><a href="jq/extract-one-field.html">How to extract one field from JSON with jq</a></li>
+<li><a href="jq/raw-output-no-quotes.html">How to get strings without quotes from jq — -r raw output</a></li>
+<li><a href="jq/compact-output-one-per-line.html">How to print one JSON object per line with jq — -c</a></li>
+<li><a href="jq/drill-into-nested-objects.html">How to drill into nested JSON objects with jq</a></li>
+<li><a href="jq/index-and-stream-arrays.html">How to index into and stream JSON arrays with jq</a></li>
+<li><a href="jq/count-with-length.html">How to count things in JSON with jq — length</a></li>
+<li><a href="jq/select-by-number.html">How to filter JSON rows by a number with jq select</a></li>
+<li><a href="jq/select-by-string-match.html">How to filter JSON by exact string match with jq select</a></li>
+<li><a href="jq/select-with-boolean-logic.html">How to combine conditions in jq — and, or, not</a></li>
+<li><a href="jq/map-pluck-one-field.html">How to pluck one field from every element with jq map</a></li>
+<li><a href="jq/map-reshape-objects.html">How to keep only some fields of every object with jq map</a></li>
+<li><a href="jq/map-add-computed-field.html">How to add a computed field to every JSON object with jq</a></li>
+<li><a href="jq/chain-filters-with-pipes.html">How to chain jq filters with pipes</a></li>
+<li><a href="jq/build-new-objects.html">How to build new JSON objects with jq</a></li>
+<li><a href="jq/strings-and-type-conversion.html">How to convert types and split or join strings with jq</a></li>
+<li><a href="jq/regex-match-with-test.html">How to match strings with a regex inside jq — test()</a></li>
+<li><a href="jq/sort-by-field.html">How to sort JSON objects by a field with jq — sort_by</a></li>
+<li><a href="jq/deduplicate-with-unique.html">How to deduplicate values with jq — unique</a></li>
+<li><a href="jq/group-by-and-count.html">How to group and count JSON data with jq — group_by</a></li>
+<li><a href="jq/sum-with-add.html">How to sum numbers in JSON with jq — add</a></li>
+<li><a href="jq/max-min-by-field.html">How to find the top or bottom object by a field with jq — max_by and min_by</a></li>
+<li><a href="jq/keys-has-del.html">How to inspect and trim JSON object keys with jq — keys, has, del</a></li>
+<li><a href="jq/real-world-api-and-logs.html">jq in the real world: shape API responses and count log levels</a></li>
+<li><a href="jq/shell-variables-and-slurp.html">How to pass shell variables into jq safely — --arg — and slurp many documents with -s</a></li>
+</ul>
+<h2>SSH Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/ssh-cheatsheet">https://github.com/Ezra-Zhao/ssh-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="ssh/connect-basics-and-ports.html">How to connect with SSH — custom ports and login names</a></li>
+<li><a href="ssh/login-with-specific-key.html">How to log in with a specific SSH key — ssh -i</a></li>
+<li><a href="ssh/debug-failed-login-verbose.html">How to debug a failed SSH login — ssh -v</a></li>
+<li><a href="ssh/keepalive-idle-sessions.html">How to stop SSH sessions from freezing — ServerAliveInterval keepalive</a></li>
+<li><a href="ssh/escape-sequences-frozen-session.html">How to kill a frozen SSH session — the Enter ~. escape</a></li>
+<li><a href="ssh/create-ed25519-key.html">How to create an SSH key pair — ssh-keygen with Ed25519</a></li>
+<li><a href="ssh/install-key-with-copy-id.html">How to install your public key on a server — ssh-copy-id</a></li>
+<li><a href="ssh/ssh-agent-passphrase-once.html">How to type your key passphrase once per session — ssh-agent and ssh-add</a></li>
+<li><a href="ssh/change-passphrase-and-permissions.html">How to change a key&#x27;s passphrase — and the file permissions SSH demands</a></li>
+<li><a href="ssh/config-host-alias.html">How to stop typing addresses — ~/.ssh/config host aliases</a></li>
+<li><a href="ssh/config-global-defaults-host-star.html">How to set SSH defaults for every host — the Host * block</a></li>
+<li><a href="ssh/fix-too-many-authentication-failures.html">How to fix SSH &#x27;Too many authentication failures&#x27; — IdentitiesOnly</a></li>
+<li><a href="ssh/config-wildcard-hosts.html">How to configure a whole fleet with SSH wildcard hosts</a></li>
+<li><a href="ssh/local-forward-port.html">How to bring a remote port to your machine — ssh -L local forwarding</a></li>
+<li><a href="ssh/remote-forward-port.html">How to expose your local app through a server — ssh -R remote forwarding</a></li>
+<li><a href="ssh/dynamic-forward-socks-proxy.html">How to turn SSH into a SOCKS proxy — ssh -D dynamic forwarding</a></li>
+<li><a href="ssh/background-tunnel-fn.html">How to run an SSH tunnel in the background — -fN</a></li>
+<li><a href="ssh/jump-host-proxyjump.html">How to reach a server through a bastion — ssh -J</a></li>
+<li><a href="ssh/proxyjump-in-config.html">How to bake a jump host into your SSH config — ProxyJump</a></li>
+<li><a href="ssh/scp-copy-files.html">How to copy files with scp — both directions, custom ports, whole directories</a></li>
+<li><a href="ssh/rsync-over-ssh.html">How to sync a directory tree over SSH — rsync -e ssh</a></li>
+<li><a href="ssh/sftp-interactive-shell.html">How to browse and move files interactively — sftp</a></li>
+<li><a href="ssh/disable-root-login.html">How to disable direct root login over SSH — PermitRootLogin</a></li>
+<li><a href="ssh/keys-only-no-password-auth.html">How to turn off SSH password authentication — keys only</a></li>
+<li><a href="ssh/restrict-users-and-change-port.html">How to restrict who can log in — AllowUsers, MaxAuthTries, and changing the port safely</a></li>
+</ul>
+<h2>Terminal Superpowers — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/terminal-superpowers-cheatsheet">https://github.com/Ezra-Zhao/terminal-superpowers-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="terminal/cmux-terminal-for-ai-agents.html">cmux — the terminal built for AI coding agents</a></li>
+<li><a href="terminal/yoinks-download-videos.html">yoinks — download videos from your terminal</a></li>
+<li><a href="terminal/zoxide-smarter-cd.html">zoxide — a smarter cd that remembers where you go</a></li>
+<li><a href="terminal/fzf-fuzzy-finder.html">fzf — fuzzy-find files, history and processes as you type</a></li>
+<li><a href="terminal/fd-friendlier-find.html">fd — find files without fighting find&#x27;s syntax</a></li>
+<li><a href="terminal/ripgrep-grep-rebuilt-in-rust.html">ripgrep — grep, rebuilt in Rust</a></li>
+<li><a href="terminal/tmux-terminal-multiplexer.html">tmux — terminal sessions that survive disconnects</a></li>
+<li><a href="terminal/zellij-modern-multiplexer.html">zellij — a modern terminal workspace, tmux with training wheels</a></li>
+<li><a href="terminal/starship-prompt.html">starship — a shell prompt that tells you things</a></li>
+<li><a href="terminal/eza-modern-ls.html">eza — ls with colors, icons and git status</a></li>
+<li><a href="terminal/bat-cat-with-highlighting.html">bat — cat with syntax highlighting and line numbers</a></li>
+<li><a href="terminal/lazygit-terminal-ui.html">lazygit — git, without the memorization</a></li>
+<li><a href="terminal/tldr-man-pages-you-will-read.html">tldr — man pages you will actually read</a></li>
+<li><a href="terminal/btop-resource-monitor.html">btop — a resource monitor worth looking at</a></li>
+<li><a href="terminal/starter-pack-one-command.html">The terminal starter pack — install the whole set with one Homebrew command</a></li>
+<li><a href="terminal/navigate-faster-zoxide-fzf.html">Jump and find: zoxide + fzf for terminal navigation</a></li>
+<li><a href="terminal/find-and-search-fd-ripgrep.html">Find files, then search inside them — fd + ripgrep</a></li>
+<li><a href="terminal/view-files-eza-bat.html">Read files properly: eza to list, bat to view</a></li>
+<li><a href="terminal/tmux-vs-zellij.html">tmux vs zellij — which terminal multiplexer?</a></li>
+<li><a href="terminal/git-workflow-lazygit-starship.html">A git workflow that stays in the terminal — lazygit + starship</a></li>
+<li><a href="terminal/remote-sessions-tmux-zoxide.html">Remote work over SSH — tmux sessions plus zoxide jumps</a></li>
+<li><a href="terminal/monitor-with-btop-in-tmux.html">Watch the machine while you work — btop in a tmux pane</a></li>
+<li><a href="terminal/new-in-2026-cmux-yoinks.html">New in 2026: cmux and yoinks</a></li>
+<li><a href="terminal/replace-classic-unix-tools.html">Replace the classics: find, ls, cat and grep — with fd, eza, bat and ripgrep</a></li>
+<li><a href="terminal/learn-commands-tldr-fzf.html">Learn any command fast — tldr examples plus fzf history search</a></li>
+</ul>
+<h2>Adobe Free Alternatives — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/adobe-free-alternatives-cheatsheet">https://github.com/Ezra-Zhao/adobe-free-alternatives-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="adobe/photocraft-alternative-to-photoshop.html">Free alternative to Photoshop — PhotoCraft (early alpha)</a></li>
+<li><a href="adobe/vectorcraft-alternative-to-illustrator.html">Free alternative to Illustrator — VectorCraft (early alpha)</a></li>
+<li><a href="adobe/filmcraft-alternative-to-premiere.html">Free alternative to Premiere Pro — FilmCraft (early alpha)</a></li>
+<li><a href="adobe/lightcraft-alternative-to-lightroom.html">Free alternative to Lightroom — LightCraft (early alpha)</a></li>
+<li><a href="adobe/printcraft-alternative-to-acrobat.html">Free alternative to Acrobat — PrintCraft (early alpha)</a></li>
+<li><a href="adobe/effectcraft-alternative-to-after-effects.html">Free alternative to After Effects — EffectCraft (early alpha)</a></li>
+<li><a href="adobe/designcraft-alternative-to-indesign.html">Free alternative to InDesign — DesignCraft (early alpha)</a></li>
+<li><a href="adobe/gimp-alternative-to-photoshop.html">Free alternative to Photoshop — GIMP (mature)</a></li>
+<li><a href="adobe/inkscape-alternative-to-illustrator.html">Free alternative to Illustrator — Inkscape (mature)</a></li>
+<li><a href="adobe/davinci-resolve-alternative-to-premiere.html">Free alternative to Premiere Pro — DaVinci Resolve (mature)</a></li>
+<li><a href="adobe/kdenlive-alternative-to-premiere.html">Free alternative to Premiere Pro — Kdenlive (mature)</a></li>
+<li><a href="adobe/darktable-alternative-to-lightroom.html">Free alternative to Lightroom — darktable (mature)</a></li>
+<li><a href="adobe/audacity-alternative-to-audition.html">Free alternative to Audition — Audacity (mature)</a></li>
+<li><a href="adobe/blender-alternative-to-after-effects.html">Free alternative to After Effects — Blender (mature)</a></li>
+<li><a href="adobe/penpot-alternative-to-figma-xd.html">Free alternative to Figma and Adobe XD — Penpot (mature)</a></li>
+<li><a href="adobe/scribus-alternative-to-indesign.html">Free alternative to InDesign — Scribus (mature)</a></li>
+<li><a href="adobe/photoshop-alternatives-compared.html">Free alternatives to Photoshop — PhotoCraft and GIMP</a></li>
+<li><a href="adobe/illustrator-alternatives-compared.html">Free alternatives to Illustrator — VectorCraft and Inkscape</a></li>
+<li><a href="adobe/premiere-alternatives-compared.html">Free alternatives to Premiere Pro — FilmCraft, DaVinci Resolve and Kdenlive</a></li>
+<li><a href="adobe/lightroom-alternatives-compared.html">Free alternatives to Lightroom — LightCraft and darktable</a></li>
+<li><a href="adobe/after-effects-alternatives-compared.html">Free alternatives to After Effects — EffectCraft and Blender</a></li>
+<li><a href="adobe/indesign-alternatives-compared.html">Free alternatives to InDesign — DesignCraft and Scribus</a></li>
+<li><a href="adobe/artcraft-suite-seven-apps.html">The ArtCraft suite — seven Rust apps that replace the Adobe suite</a></li>
+<li><a href="adobe/mature-free-creative-suite.html">The mature free creative suite — GIMP, Inkscape, Kdenlive, darktable, Audacity, Blender, Scribus</a></li>
+<li><a href="adobe/install-alternatives-on-linux.html">How to install the free Adobe alternatives on Linux</a></li>
+</ul>
+<h2>Desubscribe — Free SaaS Alternatives — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/desubscribe-cheatsheet">https://github.com/Ezra-Zhao/desubscribe-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="desubscribe/replace-notion-with-appflowy.html">Replace Notion Plus ($120/yr) with AppFlowy — free and self-hosted</a></li>
+<li><a href="desubscribe/replace-slack-with-mattermost.html">Replace Slack Pro ($87/yr per person) with Mattermost — save $87 a year</a></li>
+<li><a href="desubscribe/replace-figma-with-penpot.html">Replace Figma Professional ($144/yr per editor) with Penpot — save $144 a year</a></li>
+<li><a href="desubscribe/replace-google-one-with-immich.html">Replace Google One 2TB ($100/yr) with Immich — save $100 a year</a></li>
+<li><a href="desubscribe/replace-1password-with-vaultwarden.html">Replace 1Password ($48/yr) with Vaultwarden — save $48 a year</a></li>
+<li><a href="desubscribe/replace-dropbox-with-nextcloud.html">Replace Dropbox Plus ($120/yr) with Nextcloud — save $120 a year</a></li>
+<li><a href="desubscribe/replace-airtable-with-nocodb.html">Replace Airtable Team ($240/yr per seat) with NocoDB — save $240 a year</a></li>
+<li><a href="desubscribe/replace-trello-with-wekan.html">Replace Trello Premium ($120/yr per person) with Wekan — save $120 a year</a></li>
+<li><a href="desubscribe/replace-zoom-with-jitsi.html">Replace Zoom Pro ($150/yr) with Jitsi Meet — save $150 a year</a></li>
+<li><a href="desubscribe/replace-evernote-with-joplin.html">Replace Evernote Personal ($130/yr) with Joplin — save $130 a year</a></li>
+<li><a href="desubscribe/wekan-full-install-with-mongodb.html">How to install Wekan with its MongoDB — the full command set</a></li>
+<li><a href="desubscribe/total-savings-1260-a-year.html">How much do the 10 swaps save in total? About $1,260 a year</a></li>
+<li><a href="desubscribe/team-savings-4470.html">What does a 10-person team save? $4,470 a year on three tools alone</a></li>
+<li><a href="desubscribe/five-year-cost-of-subscriptions.html">What do subscriptions really cost? $6,300 over five years</a></li>
+<li><a href="desubscribe/notes-stack-appflowy-joplin.html">Replace your notes stack — Notion + Evernote with AppFlowy + Joplin (save $250/yr)</a></li>
+<li><a href="desubscribe/files-and-photos-stack.html">Replace your file stack — Google One + Dropbox with Immich + Nextcloud (save $220/yr)</a></li>
+<li><a href="desubscribe/team-chat-and-boards-stack.html">Replace your team stack — Slack + Trello with Mattermost + Wekan (save $207/yr per person)</a></li>
+<li><a href="desubscribe/meetings-and-design-stack.html">Replace meetings and design — Zoom + Figma with Jitsi + Penpot (save $294/yr)</a></li>
+<li><a href="desubscribe/biggest-savings-first.html">The three biggest subscription savings — Airtable, Zoom, Figma ($534/yr)</a></li>
+<li><a href="desubscribe/cheapest-swaps-to-start.html">The two easiest swaps to start with — 1Password and Slack ($135/yr)</a></li>
+<li><a href="desubscribe/what-you-need-to-self-host.html">What do you need to self-host all of this? One small server</a></li>
+<li><a href="desubscribe/are-these-prices-current.html">Are these subscription prices still current?</a></li>
+<li><a href="desubscribe/free-tiers-honest-note.html">Do the &#x27;free&#x27; replacements have paid tiers? The honest note</a></li>
+<li><a href="desubscribe/passwords-and-data-stack.html">Replace passwords and business data — 1Password + Airtable with Vaultwarden + NocoDB (save $288/yr)</a></li>
+<li><a href="desubscribe/run-all-ten-replacements.html">Run all 10 free replacements on one VPS — every install command</a></li>
 </ul>
 <footer>
 <p>All cheatsheets by <a href="https://github.com/Ezra-Zhao">Ezra-Zhao on GitHub</a> — free, MIT-licensed, in English with Chinese / Spanish / Portuguese editions.</p>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to add text to a video without extra files — ffmpeg drawtext</title>
+<meta name="description" content="A title, a timestamp, a label — plain text straight onto the frames.">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6}
+main{max-width:780px;margin:0 auto;padding:24px 16px 56px}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+.crumb{font-size:.85rem;color:#8b949e;margin-bottom:8px}
+h1{font-size:1.5rem;line-height:1.3;margin:.2em 0 .35em;color:#f0f6fc}
+h2{font-size:1.08rem;margin:1.7em 0 .45em;color:#f0f6fc}
+.scenario{color:#c9d4e0;font-size:1.02rem;margin:.2em 0 1em}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;overflow-x:auto;margin:0 0 1em}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:.9rem}
+pre code{white-space:pre;color:#e6edf3}
+.note{background:#101c14;border:1px solid #1f4429;border-left:4px solid #3fb950;border-radius:6px;padding:10px 14px;margin:0 0 1.2em;color:#c9e8d1}
+.note p{margin:.2em 0}
+.ctx{background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px 14px;margin:0 0 1.2em;color:#9fb2c3;font-size:.92rem}
+.ctx p{margin:.2em 0}
+.card{margin:1.6em 0}
+.card img{width:100%;max-width:430px;height:auto;border:1px solid #30363d;border-radius:10px;display:block}
+.card figcaption{font-size:.85rem;color:#8b949e;margin-top:6px}
+footer{border-top:1px solid #30363d;margin-top:2.2em;padding-top:1em;font-size:.92rem;color:#8b949e}
+footer p{margin:.35em 0}
+ul.pages{list-style:none;padding:0;margin:.4em 0 1.4em}
+ul.pages li{padding:.34em 0;border-bottom:1px solid #21262d}
+ul.pages li:last-child{border-bottom:none}
+.intro{color:#c9d4e0}
+</style>
+</head>
+<body>
+<main>
+<p class="crumb"><a href="../index.html">Cheatsheet Pages</a> / <a href="https://github.com/Ezra-Zhao/ffmpeg-cheatsheet">FFmpeg Cheatsheet</a></p>
+<h1>How to add text to a video without extra files — ffmpeg drawtext</h1>
+<p class="scenario">A title, a timestamp, a label — plain text straight onto the frames.</p>
+<pre><code>ffmpeg -i input.mp4 -vf &quot;drawtext=text=&#x27;Hello&#x27;:fontsize=48:fontcolor=white:x=10:y=10&quot; -c:a copy output.mp4</code></pre>
+<figure class="card"><a href="https://github.com/Ezra-Zhao/ffmpeg-cheatsheet"><img src="../images/ffmpeg-cheatsheet.png" alt="FFmpeg Cheatsheet one-page card — 28 commands that actually work" loading="lazy"></a><figcaption>The full one-page card — FFmpeg Cheatsheet. <a href="https://github.com/Ezra-Zhao/ffmpeg-cheatsheet">Get the complete cheatsheet on GitHub</a></figcaption></figure>
+<footer>
+<p>Full cheatsheet: <a href="https://github.com/Ezra-Zhao/ffmpeg-cheatsheet">FFmpeg Cheatsheet on GitHub</a> — every command on this page comes from it, tested and verified.</p>
+<p>More cheatsheets and tools by the author: <a href="https://github.com/Ezra-Zhao">github.com/Ezra-Zhao</a></p>
+<p><a href="../index.html">&larr; All command pages</a></p>
+</footer>
+</main>
+</body>
+</html>
