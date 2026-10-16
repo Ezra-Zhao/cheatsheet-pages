@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WhatsServe — WhatsApp Auto-Replies for Auto Parts &amp; Repair Shops</title>
+<meta name="description" content="WhatsServe answers your customers on WhatsApp: send a car model and year, get the right wiper size and price back automatically. Setup done for you.">
+<style>
+  :root {
+    --ink: #1c2530;
+    --muted: #57606a;
+    --line: #d8dee4;
+    --bg: #ffffff;
+    --soft: #f6f8fa;
+    --accent: #1f883d;
+    --accent-dark: #176c30;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; padding-top: 16px; padding-bottom: 16px; }
+  .logo { font-weight: 700; font-size: 20px; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+  nav a { color: var(--muted); text-decoration: none; margin-left: 20px; font-size: 15px; }
+  nav a:hover { color: var(--ink); }
+  .hero { padding: 64px 0 48px; }
+  .hero h1 { font-size: 38px; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 16px; }
+  .hero p.lede { font-size: 19px; color: var(--muted); max-width: 640px; margin-bottom: 28px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #fff; text-decoration: none;
+    font-weight: 600; font-size: 16px; padding: 13px 28px; border-radius: 8px;
+  }
+  .btn:hover { background: var(--accent-dark); }
+  .btn.secondary { background: var(--soft); color: var(--ink); border: 1px solid var(--line); margin-left: 10px; }
+  .btn.secondary:hover { background: #eef1f4; }
+  .langs { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  section { padding: 48px 0; border-top: 1px solid var(--line); }
+  h2 { font-size: 26px; letter-spacing: -0.01em; margin-bottom: 10px; }
+  .sub { color: var(--muted); margin-bottom: 28px; max-width: 620px; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .step { background: var(--soft); border: 1px solid var(--line); border-radius: 10px; padding: 22px; }
+  .step .n { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
+  .step h3 { font-size: 17px; margin-bottom: 6px; }
+  .step p { font-size: 15px; color: var(--muted); }
+  .chat { background: #0e1512; border-radius: 10px; padding: 24px; max-width: 560px; }
+  .msg { max-width: 85%; padding: 10px 14px; border-radius: 12px; font-size: 15px; line-height: 1.5; margin-bottom: 10px; }
+  .msg.in { background: #233029; color: #e6edf3; border-bottom-left-radius: 4px; }
+  .msg.out { background: #14532d; color: #eafff1; margin-left: auto; border-bottom-right-radius: 4px; }
+  .features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 28px; }
+  .feature h3 { font-size: 16px; margin-bottom: 4px; }
+  .feature p { font-size: 15px; color: var(--muted); }
+  .tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+  .tier { border: 1px solid var(--line); border-radius: 10px; padding: 26px 22px; }
+  .tier.featured { border-color: var(--accent); border-width: 2px; }
+  .tier h3 { font-size: 17px; margin-bottom: 4px; }
+  .tier .price { font-size: 32px; font-weight: 700; letter-spacing: -0.02em; margin: 8px 0 4px; }
+  .tier .once { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+  .tier ul { list-style: none; font-size: 15px; }
+  .tier li { padding: 6px 0 6px 22px; position: relative; color: #2b3440; }
+  .tier li::before { content: "✓"; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+  .tier .btn { display: block; text-align: center; margin-top: 20px; }
+  .faq-item { margin-bottom: 22px; }
+  .faq-item h3 { font-size: 16px; margin-bottom: 4px; }
+  .faq-item p { font-size: 15px; color: var(--muted); max-width: 680px; }
+  .cta { background: var(--soft); border: 1px solid var(--line); border-radius: 12px; padding: 40px 32px; text-align: center; }
+  .cta h2 { margin-bottom: 8px; }
+  .cta p { color: var(--muted); margin-bottom: 24px; }
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+  @media (max-width: 720px) {
+    .steps, .tiers { grid-template-columns: 1fr; }
+    .features { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .btn.secondary { margin-left: 0; margin-top: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Whats<span>Serve</span></div>
+    <nav>
+      <a href="#how">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="hero">
+    <h1>Your customers ask on WhatsApp. WhatsServe answers for you.</h1>
+    <p class="lede">A customer sends their car model and year. WhatsServe replies with the right wiper size and the price from your own price list, answers the questions customers ask every day, and points them to your shop — day or night, including the hours you're under a car.</p>
+    <!-- TODO: Replace the href below with the Stripe Payment Link for the $150 Setup tier (see PRICING-NOTES.md). -->
+    <a class="btn" href="https://buy.stripe.com/aFacN60Ar35U3nr0lhgMw00">Get started — $150</a>
+    <a class="btn secondary" href="#how">See how it works</a>
+    <p class="langs">Customer conversations in English, 中文 (Chinese), and Español.</p>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">No app for your customers to install. They just message your WhatsApp Business number, the way they already do.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="n">Step 1</div>
+        <h3>The customer messages you</h3>
+        <p>They type their car model and year — for example, "2019 Camry" — in English, Chinese, or Spanish.</p>
+      </div>
+      <div class="step">
+        <div class="n">Step 2</div>
+        <h3>WhatsServe answers automatically</h3>
+        <p>It looks up the correct wiper size for that car and replies with the size and the price from your price list.</p>
+      </div>
+      <div class="step">
+        <div class="n">Step 3</div>
+        <h3>The customer comes to you</h3>
+        <p>The reply points them to your shop to buy or get the wipers fitted. Anything the bot can't answer is handed to you, with the conversation attached.</p>
+      </div>
+    </div>
+
+    <div style="height: 28px"></div>
+    <div class="chat" aria-label="Example conversation">
+      <div class="msg in">Hi, do you have wipers for a 2019 Camry?</div>
+      <div class="msg out">Yes. Your 2019 Camry takes a 28&quot; driver side and 18&quot; passenger side. The pair is $XX at our shop — you can pick them up today, or we can fit them for you here.</div>
+      <div class="msg in">Great, what time do you close?</div>
+      <div class="msg out">That question is answered from your shop's own FAQ — hours, address, payment, fitting — set up with you during setup.</div>
+    </div>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 10px;">Example only. Prices and answers come from your own price list and shop details.</p>
+  </div>
+</section>
+
+<section id="features">
+  <div class="wrap">
+    <h2>What it does</h2>
+    <p class="sub">Built for one job: the messages auto parts and repair shops get over and over.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Size lookup and quotes</h3>
+        <p>Car model + year in, correct wiper size and your price out. No more digging through a fitment book while a customer waits.</p>
+      </div>
+      <div class="feature">
+        <h3>Three languages</h3>
+        <p>The bot follows the customer's language — English, 中文, or Español — inside the same conversation.</p>
+      </div>
+      <div class="feature">
+        <h3>Everyday questions, answered</h3>
+        <p>Opening hours, where to park, whether you fit parts, how to pay. You write the answers once, with our help, during setup.</p>
+      </div>
+      <div class="feature">
+        <h3>Hands off to a human</h3>
+        <p>Quotes for repairs, complaints, anything unusual — the bot steps aside and the chat lands with you or your staff, nothing gets lost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <h2>Pricing</h2>
+    <p class="sub">One-time setup fee. We build it, configure it with your price list, and hand it over working. Pick the level of help you want — you can start at Setup and move up later.</p>
+    <div class="tiers">
+      <div class="tier">
+        <h3>Setup</h3>
+        <div class="price">$150</div>
+        <div class="once">one-time</div>
+        <ul>
+          <li>WhatsApp Business number connected</li>
+          <li>Wiper size lookup + price replies configured</li>
+          <li>Starter set of FAQ answers (hours, address, fitting, payment)</li>
+          <li>Conversations in English</li>
+          <li>Hand-off to you when the bot can't answer</li>
+          <li>You test it as a customer before it goes live</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/aFacN60Ar35U3nr0lhgMw00">Get started — $150</a>
+      </div>
+      <div class="tier featured">
+        <h3>Standard</h3>
+        <div class="price">$400</div>
+        <div class="once">one-time</div>
+        <ul>
+          <li>Everything in Setup</li>
+          <li>Conversations in English, 中文, and Español</li>
+          <li>Full FAQ set, written with you for your shop</li>
+          <li>Quote replies formatted around your price list</li>
+          <li>Hand-off can go to a second staff member</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/3cIbJ2cj9bCqbTX6JFgMw01">Get started — $400</a>
+      </div>
+      <div class="tier">
+        <h3>Full Package</h3>
+        <div class="price">$900</div>
+        <div class="once">one-time</div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>We enter your full wiper catalog and price list for you — send it as a spreadsheet, a photo, whatever you have</li>
+          <li>Reply wording matched to how your shop talks to customers</li>
+          <li>A review pass after launch: we fix replies based on your real customer messages</li>
+        </ul>
+        <a class="btn" href="https://buy.stripe.com/14AcN696X49YbTXaZVgMw02">Get started — $900</a>
+      </div>
+    </div>
+    <p style="font-size: 14px; color: var(--muted); margin-top: 18px;">All tiers are setup and configuration services, delivered remotely. Running costs of your own WhatsApp Business number, if any, stay with your provider.</p>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions shops ask us</h2>
+    <div style="height: 12px"></div>
+    <div class="faq-item">
+      <h3>What do I need to start?</h3>
+      <p>A WhatsApp Business number and your wiper price list. If you don't have a WhatsApp Business number yet, getting one connected is part of the setup. Your price list can be a spreadsheet, a document, or clear photos of your price sheets.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long until it's live?</h3>
+      <p>Setup is done remotely and asynchronously — you send us your details, we configure everything, then you test the bot as if you were a customer. It only goes live on your number after you've tried it and approved the answers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>I'm not technical. Is this going to be a headache?</h3>
+      <p>No. There is nothing for you to install or maintain. You answer a few questions about your shop, send your price list, and test the result by messaging it. If a reply sounds wrong, tell us in plain words and we adjust it.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I try it before it goes live?</h3>
+      <p>Yes — that's built into every tier. Before launch you message the bot yourself, ask it the things your customers ask, and check the sizes, prices, and wording. We fix what needs fixing, and only then does it start answering your customers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What if a reply needs fixing after launch?</h3>
+      <p>Every package includes one free revision round after launch. We go through the bot's real conversations with your customers together, and fix the replies that missed — the questions it got wrong, the wording that doesn't sound like your shop. That round is on us.</p>
+    </div>
+  </div>
+</section>
+
+<div class="wrap" style="padding-bottom: 56px;">
+  <div class="cta">
+    <h2>Stop re-typing the same answers.</h2>
+    <p>Send us your price list. We'll set up the bot that quotes wiper sizes on WhatsApp while you work.</p>
+    <a class="btn" href="https://buy.stripe.com/aFacN60Ar35U3nr0lhgMw00">Get started — $150</a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    WhatsServe — WhatsApp auto-reply setup for auto parts and repair shops.<br>
+    Customer conversations in English, 中文 (Chinese), and Español.
+  </div>
+</footer>
+
+</body>
+</html>
