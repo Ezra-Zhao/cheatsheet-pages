@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ezra-zhao.github.io/cheatsheet-pages/sitemap.xml

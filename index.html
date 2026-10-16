@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cheatsheet Pages — Git, SQL &amp; kubectl, one question per page</title>
+<meta name="description" content="One command, one real-world scenario, one page. Searchable command pages for Git, SQL and kubectl, drawn from tested open-source cheatsheets.">
+<style>
+:root{color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;line-height:1.6}
+main{max-width:780px;margin:0 auto;padding:24px 16px 56px}
+a{color:#58a6ff;text-decoration:none}
+a:hover{text-decoration:underline}
+.crumb{font-size:.85rem;color:#8b949e;margin-bottom:8px}
+h1{font-size:1.5rem;line-height:1.3;margin:.2em 0 .35em;color:#f0f6fc}
+h2{font-size:1.08rem;margin:1.7em 0 .45em;color:#f0f6fc}
+.scenario{color:#c9d4e0;font-size:1.02rem;margin:.2em 0 1em}
+pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 16px;overflow-x:auto;margin:0 0 1em}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace;font-size:.9rem}
+pre code{white-space:pre;color:#e6edf3}
+.note{background:#101c14;border:1px solid #1f4429;border-left:4px solid #3fb950;border-radius:6px;padding:10px 14px;margin:0 0 1.2em;color:#c9e8d1}
+.note p{margin:.2em 0}
+.ctx{background:#161b22;border:1px solid #30363d;border-radius:6px;padding:10px 14px;margin:0 0 1.2em;color:#9fb2c3;font-size:.92rem}
+.ctx p{margin:.2em 0}
+.card{margin:1.6em 0}
+.card img{width:100%;max-width:430px;height:auto;border:1px solid #30363d;border-radius:10px;display:block}
+.card figcaption{font-size:.85rem;color:#8b949e;margin-top:6px}
+footer{border-top:1px solid #30363d;margin-top:2.2em;padding-top:1em;font-size:.92rem;color:#8b949e}
+footer p{margin:.35em 0}
+ul.pages{list-style:none;padding:0;margin:.4em 0 1.4em}
+ul.pages li{padding:.34em 0;border-bottom:1px solid #21262d}
+ul.pages li:last-child{border-bottom:none}
+.intro{color:#c9d4e0}
+</style>
+</head>
+<body>
+<main>
+<h1>Cheatsheet Pages</h1>
+<p class="intro">One command, one real-world scenario, one page. Every page answers a single question developers actually search for, with a command copied from a tested, open-source cheatsheet — no invented flags, no untested syntax.</p>
+<h2>Git Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/git-cheatsheet">https://github.com/Ezra-Zhao/git-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="git/config-user-name-email.html">How to set your Git username and email — git config</a></li>
+<li><a href="git/default-branch-main.html">How to make main the default branch for new Git repos</a></li>
+<li><a href="git/status-short.html">How to see what has changed in Git, compactly — git status -sb</a></li>
+<li><a href="git/stage-hunks-add-p.html">How to stage only part of a file in Git — git add -p</a></li>
+<li><a href="git/amend-last-commit.html">How to fix the last Git commit — git commit --amend</a></li>
+<li><a href="git/log-oneline-graph.html">How to view Git history as a graph — git log --oneline --graph</a></li>
+<li><a href="git/unstage-file.html">How to unstage a file in Git and keep your edits — git restore --staged</a></li>
+<li><a href="git/discard-file-changes.html">How to discard local changes in a file — git restore (permanent)</a></li>
+<li><a href="git/undo-last-commit-reset-soft-mixed-hard.html">How to undo the last commit in Git — git reset --soft vs --mixed vs --hard</a></li>
+<li><a href="git/revert-pushed-commit.html">How to undo a pushed commit safely — git revert</a></li>
+<li><a href="git/list-branches.html">How to list all branches in Git, local and remote — git branch -a / -vv</a></li>
+<li><a href="git/create-switch-branch.html">How to create and switch to a new branch in Git — checkout -b / switch -c</a></li>
+<li><a href="git/delete-branch-local-and-remote.html">How to delete a Git branch locally and on the remote</a></li>
+<li><a href="git/rebase-onto-main.html">How to rebase your branch onto the latest main in Git</a></li>
+<li><a href="git/squash-commits-interactive-rebase.html">How to squash or reword recent commits — git rebase -i</a></li>
+<li><a href="git/rebase-continue-abort.html">How to finish or cancel a Git rebase — --continue / --abort</a></li>
+<li><a href="git/stash-changes.html">How to stash unfinished work in Git — git stash push</a></li>
+<li><a href="git/stash-list-pop-apply.html">How to list, restore and drop Git stashes — pop vs apply</a></li>
+<li><a href="git/check-remote-url.html">How to check which URL a Git remote points to — git remote -v</a></li>
+<li><a href="git/fetch-prune.html">How to clean up stale remote branches in Git — git fetch --prune</a></li>
+<li><a href="git/pull-with-rebase.html">How to pull with rebase instead of merge — git pull --rebase</a></li>
+<li><a href="git/push-set-upstream.html">How to push a branch and set its upstream — git push -u</a></li>
+<li><a href="git/recover-lost-commit-reflog.html">How to recover a lost commit in Git — git reflog</a></li>
+<li><a href="git/cherry-pick.html">How to copy one commit onto your branch — git cherry-pick</a></li>
+<li><a href="git/bisect-find-bad-commit.html">How to find the commit that broke your code — git bisect</a></li>
+</ul>
+<h2>SQL Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/sql-cheatsheet">https://github.com/Ezra-Zhao/sql-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="sql/filter-rows-where.html">How to filter rows in SQL — WHERE</a></li>
+<li><a href="sql/top-n-rows-limit.html">How to get the top N rows in SQL — ORDER BY ... LIMIT</a></li>
+<li><a href="sql/select-distinct.html">How to remove duplicate values from a result — SELECT DISTINCT</a></li>
+<li><a href="sql/like-pattern-matching.html">How to match text patterns in SQL — LIKE % and _</a></li>
+<li><a href="sql/in-and-between.html">How to filter by a set or a range in SQL — IN / BETWEEN</a></li>
+<li><a href="sql/count-sum-avg.html">How to count, sum and average in SQL — COUNT / SUM / AVG</a></li>
+<li><a href="sql/group-by.html">How to compute per-group statistics in SQL — GROUP BY</a></li>
+<li><a href="sql/having-vs-where.html">HAVING vs WHERE in SQL — filtering groups, not rows</a></li>
+<li><a href="sql/case-when-conditional-aggregation.html">How to count with conditions in SQL — CASE WHEN inside aggregates</a></li>
+<li><a href="sql/inner-join.html">INNER JOIN in SQL — only rows that match in both tables</a></li>
+<li><a href="sql/left-join.html">LEFT JOIN in SQL — keep every row of the left table</a></li>
+<li><a href="sql/find-rows-with-no-match.html">How to find rows with no match in SQL — LEFT JOIN ... IS NULL</a></li>
+<li><a href="sql/self-join.html">How to join a table to itself in SQL — self join for org charts</a></li>
+<li><a href="sql/join-three-tables-aggregate.html">How to join three tables and aggregate in SQL — orders per department</a></li>
+<li><a href="sql/subquery-above-average.html">How to compare rows against an overall average in SQL — scalar subquery</a></li>
+<li><a href="sql/exists-check.html">How to check that a related row exists in SQL — EXISTS</a></li>
+<li><a href="sql/cte-with.html">How to name an intermediate result in SQL — WITH (CTE)</a></li>
+<li><a href="sql/rank-window-function.html">How to rank rows inside groups in SQL — RANK() OVER (PARTITION BY ...)</a></li>
+<li><a href="sql/insert-row.html">How to insert a row in SQL — INSERT INTO ... VALUES</a></li>
+<li><a href="sql/update-rows-where.html">How to update rows in SQL — UPDATE ... WHERE (and the mistake that updates the whole table)</a></li>
+<li><a href="sql/delete-rows-where.html">How to delete rows in SQL — DELETE ... WHERE</a></li>
+<li><a href="sql/transactions-begin-commit.html">How SQL transactions work — BEGIN / COMMIT / ROLLBACK</a></li>
+<li><a href="sql/upsert-on-conflict.html">How to upsert in SQL — INSERT ... ON CONFLICT DO UPDATE</a></li>
+<li><a href="sql/create-table.html">How to create a table in SQL — CREATE TABLE with keys and foreign keys</a></li>
+<li><a href="sql/create-index.html">How to speed up frequent lookups in SQL — CREATE INDEX</a></li>
+</ul>
+<h2>kubectl Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/kubectl-cheatsheet">https://github.com/Ezra-Zhao/kubectl-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="kubectl/check-current-cluster.html">How to check which cluster kubectl is talking to — kubectl cluster-info</a></li>
+<li><a href="kubectl/get-pods-all-namespaces.html">How to list every pod in every namespace — kubectl get pods -A</a></li>
+<li><a href="kubectl/describe-pod.html">How to find out why a pod is pending or crashing — kubectl describe</a></li>
+<li><a href="kubectl/get-events-sorted.html">How to see cluster events in order — kubectl get events --sort-by</a></li>
+<li><a href="kubectl/top-usage.html">How to check live CPU and memory usage — kubectl top</a></li>
+<li><a href="kubectl/apply-manifest.html">How to deploy or update from a manifest — kubectl apply -f</a></li>
+<li><a href="kubectl/create-deployment.html">How to create a deployment in one line — kubectl create deployment</a></li>
+<li><a href="kubectl/scale-deployment.html">How to change a deployment&#x27;s replica count — kubectl scale</a></li>
+<li><a href="kubectl/set-image.html">How to update a deployment&#x27;s image — kubectl set image</a></li>
+<li><a href="kubectl/rollout-restart.html">How to restart all pods of a deployment — kubectl rollout restart</a></li>
+<li><a href="kubectl/rollout-status.html">How to watch a rollout until it finishes — kubectl rollout status</a></li>
+<li><a href="kubectl/rollout-history-undo.html">How to roll back a deployment — kubectl rollout history / undo</a></li>
+<li><a href="kubectl/logs-pod.html">How to read a pod&#x27;s logs — kubectl logs</a></li>
+<li><a href="kubectl/logs-follow-tail.html">How to follow pod logs live — kubectl logs -f --tail</a></li>
+<li><a href="kubectl/logs-previous-crashed-container.html">How to get logs from a crashed container — kubectl logs -p (CrashLoopBackOff)</a></li>
+<li><a href="kubectl/exec-shell.html">How to open a shell inside a running container — kubectl exec -it</a></li>
+<li><a href="kubectl/cp-copy-files.html">How to copy files in and out of a container — kubectl cp</a></li>
+<li><a href="kubectl/get-resources-by-label.html">How to query resources by label — kubectl get pods -l</a></li>
+<li><a href="kubectl/delete-pod-deployment.html">How to delete pods and deployments — kubectl delete</a></li>
+<li><a href="kubectl/port-forward.html">How to access a cluster service from your laptop — kubectl port-forward</a></li>
+<li><a href="kubectl/get-contexts.html">How to list the clusters you can reach — kubectl config get-contexts</a></li>
+<li><a href="kubectl/switch-context.html">How to switch Kubernetes clusters — kubectl config use-context</a></li>
+<li><a href="kubectl/list-create-namespaces.html">How to list and create namespaces — kubectl get ns / create namespace</a></li>
+<li><a href="kubectl/set-default-namespace.html">How to set a default namespace and stop typing -n — kubectl config set-context</a></li>
+<li><a href="kubectl/debug-ephemeral-container.html">How to debug a running pod without restarting it — kubectl debug</a></li>
+</ul>
+<footer>
+<p>All cheatsheets by <a href="https://github.com/Ezra-Zhao">Ezra-Zhao on GitHub</a> — free, MIT-licensed, in English with Chinese / Spanish / Portuguese editions.</p>
+</footer>
+</main>
+</body>
+</html>
