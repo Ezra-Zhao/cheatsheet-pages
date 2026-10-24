@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cheatsheet Pages — one command, one question, one page</title>
-<meta name="description" content="One command, one real-world scenario, one page. 300 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, the terminal, free Adobe alternatives and self-hosted SaaS replacements — drawn from tested open-source cheatsheets.">
+<meta name="description" content="One command, one real-world scenario, one page. 375 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, Vim, tmux, systemd, the terminal, free Adobe alternatives and self-hosted SaaS replacements — drawn from tested open-source cheatsheets.">
 <style>
 :root{color-scheme:dark}
 *{box-sizing:border-box}
@@ -36,7 +36,7 @@ ul.pages li:last-child{border-bottom:none}
 </head>
 <body>
 <main>
-<h1>Cheatsheet Pages</h1><div style="background:#161b22;border:1px solid #30363d;border-radius:8px;padding:14px 18px;margin:18px 0">📦 <b>Cheatsheets Pro Pack</b> — all 12 sheets + printable cards in one zip, $19. <a href="pro-pack/">Get the pack</a></div>
+<h1>Cheatsheet Pages</h1>
 <p class="intro">One command, one real-world scenario, one page. Every page answers a single question developers actually search for, with a command copied from a tested, open-source cheatsheet — no invented flags, no untested syntax.</p>
 <h2>Git Cheatsheet — 25 pages</h2>
 <p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/git-cheatsheet">https://github.com/Ezra-Zhao/git-cheatsheet</a></p>
@@ -385,6 +385,93 @@ ul.pages li:last-child{border-bottom:none}
 <li><a href="desubscribe/free-tiers-honest-note.html">Do the &#x27;free&#x27; replacements have paid tiers? The honest note</a></li>
 <li><a href="desubscribe/passwords-and-data-stack.html">Replace passwords and business data — 1Password + Airtable with Vaultwarden + NocoDB (save $288/yr)</a></li>
 <li><a href="desubscribe/run-all-ten-replacements.html">Run all 10 free replacements on one VPS — every install command</a></li>
+</ul>
+<h2>Vim Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/vim-cheatsheet">https://github.com/Ezra-Zhao/vim-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="vim/save-quit-write.html">How to save and quit in Vim — :w, :q, :wq and ZZ</a></li>
+<li><a href="vim/quit-without-saving.html">How to quit Vim and throw your changes away — :q! and ZQ</a></li>
+<li><a href="vim/x-vs-wq-mtime.html">How to quit Vim without touching an unchanged file — :x vs :wq</a></li>
+<li><a href="vim/save-with-sudo-tee.html">How to save a file in Vim that you forgot to open with sudo — :w !sudo tee %</a></li>
+<li><a href="vim/open-at-line-or-match.html">How to open a file in Vim at a line number or a match — vim +42, vim +/pattern</a></li>
+<li><a href="vim/move-words-hjkl-wbe.html">How to move in Vim — h j k l and w b e</a></li>
+<li><a href="vim/line-anchors-and-jumps.html">How to jump to a line or line anchor in Vim — 0 ^ $, gg G, :42</a></li>
+<li><a href="vim/find-char-f-t.html">How to find a character on the current line in Vim — f F t T with ; and ,</a></li>
+<li><a href="vim/matching-pair-and-paragraph.html">How to jump to a matching bracket or the next paragraph in Vim — % and { }</a></li>
+<li><a href="vim/scroll-and-screen-anchors.html">How to scroll and jump around the screen in Vim — Ctrl-d/u/f/b and H M L</a></li>
+<li><a href="vim/insert-mode-six-doors.html">How to enter insert mode in Vim, six ways — i a I A o O</a></li>
+<li><a href="vim/delete-yank-paste-counts.html">How to delete, copy and paste lines in Vim — dd, yy, p with counts</a></li>
+<li><a href="vim/undo-redo-repeat.html">How to undo, redo and repeat in Vim — u, Ctrl-r and .</a></li>
+<li><a href="vim/operators-motions-grammar.html">How Vim&#x27;s editing grammar works — operators d / c / y plus a motion</a></li>
+<li><a href="vim/text-objects.html">How to edit with Vim text objects — ciw, ci&quot;, dap, di(</a></li>
+<li><a href="vim/searching-n-and-star.html">How to search in Vim — / ?, n N, and * #</a></li>
+<li><a href="vim/substitute-current-line.html">How to find and replace on the current line in Vim — :s with g and c flags</a></li>
+<li><a href="vim/substitute-file-and-ranges.html">How to find and replace across a file or a line range in Vim — :%s and :12,20s</a></li>
+<li><a href="vim/search-settings-case-highlight.html">How to control case and highlighting when searching in Vim — \c, smartcase, :noh</a></li>
+<li><a href="vim/global-command.html">How to act on every matching line in Vim — :g/pattern/d and :v</a></li>
+<li><a href="vim/visual-modes.html">How to select text in Vim — the three visual modes v, V, Ctrl-v</a></li>
+<li><a href="vim/visual-block-insert.html">How to insert the same text on many lines in Vim — Ctrl-v then I, and $ A</a></li>
+<li><a href="vim/macros-record-replay.html">How to record and replay Vim macros — q to record, @ to play</a></li>
+<li><a href="vim/registers-and-clipboard.html">How to use Vim registers — named registers and the system clipboard</a></li>
+<li><a href="vim/survival-vimrc.html">A survival ~/.vimrc — four settings that pay off daily</a></li>
+</ul>
+<h2>tmux Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/tmux-cheatsheet">https://github.com/Ezra-Zhao/tmux-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="tmux/new-named-session.html">How to create a named tmux session — tmux new -s</a></li>
+<li><a href="tmux/list-and-attach-sessions.html">How to list tmux sessions and reattach — tmux ls, tmux attach -t</a></li>
+<li><a href="tmux/detach-prefix-d.html">How to detach from tmux and leave everything running — prefix d</a></li>
+<li><a href="tmux/kill-session.html">How to end a tmux session for good — tmux kill-session -t</a></li>
+<li><a href="tmux/new-window-and-rename.html">How to open and rename tmux windows — prefix c, prefix ,</a></li>
+<li><a href="tmux/switching-windows.html">How to switch tmux windows — prefix n / p, digits, and the window list</a></li>
+<li><a href="tmux/kill-window.html">How to kill the current tmux window — prefix &amp;</a></li>
+<li><a href="tmux/swap-and-move-windows.html">How to reorder tmux windows — swap-window and move-window</a></li>
+<li><a href="tmux/split-panes.html">How to split tmux panes — prefix % side-by-side, prefix &quot; top-and-bottom</a></li>
+<li><a href="tmux/moving-between-panes.html">How to move between tmux panes — arrow keys, prefix o, prefix q</a></li>
+<li><a href="tmux/zoom-pane.html">How to zoom a tmux pane full-screen (and back) — prefix z</a></li>
+<li><a href="tmux/swap-panes-and-layouts.html">How to swap tmux panes and cycle layouts — prefix { }, prefix Space</a></li>
+<li><a href="tmux/resize-panes.html">How to resize tmux panes — prefix Alt-arrow, or resize-pane</a></li>
+<li><a href="tmux/kill-pane-break-pane.html">How to kill a tmux pane, or break it out into its own window — prefix x, prefix !</a></li>
+<li><a href="tmux/copy-mode-scrollback.html">How to scroll back and search in tmux — copy mode, prefix [</a></li>
+<li><a href="tmux/copy-text-mode-keys.html">How to copy text in tmux copy mode — emacs and vi keys</a></li>
+<li><a href="tmux/paste-buffer.html">How to paste in tmux — prefix ], and the buffer stack</a></li>
+<li><a href="tmux/capture-pane.html">How to print a tmux pane&#x27;s contents to stdout — tmux capture-pane -p</a></li>
+<li><a href="tmux/change-prefix-ctrl-a.html">How to change the tmux prefix key — Ctrl-b to Ctrl-a</a></li>
+<li><a href="tmux/mouse-on.html">How to turn on tmux mouse support — set -g mouse on</a></li>
+<li><a href="tmux/history-index-renumber-config.html">tmux config basics — bigger history, 1-based indexes, auto-renumber</a></li>
+<li><a href="tmux/reload-config.html">How to reload your tmux config without restarting — prefix r</a></li>
+<li><a href="tmux/friendlier-split-keys.html">Friendlier tmux split keys that keep your directory — config bindings</a></li>
+<li><a href="tmux/scripting-send-keys.html">How to drive tmux from scripts — detached sessions and send-keys</a></li>
+<li><a href="tmux/choose-tree-and-kill-server.html">How to browse tmux sessions visually — choose-tree (and kill-server, the last resort)</a></li>
+</ul>
+<h2>systemd Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/systemd-cheatsheet">https://github.com/Ezra-Zhao/systemd-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="systemd/status-unit.html">How to check whether a service is running, failed or dead — systemctl status</a></li>
+<li><a href="systemd/start-stop-unit.html">How to start or stop a systemd service right now — systemctl start / stop</a></li>
+<li><a href="systemd/restart-vs-reload.html">systemctl restart vs reload — which one does your change need?</a></li>
+<li><a href="systemd/enable-disable-boot.html">How to control whether a service starts at boot — systemctl enable / disable</a></li>
+<li><a href="systemd/enable-now.html">How to enable and start a service in one step — systemctl enable --now</a></li>
+<li><a href="systemd/is-active-is-enabled.html">How to ask systemd yes/no questions in scripts — is-active, is-enabled, is-failed</a></li>
+<li><a href="systemd/mask-unmask-unit.html">How to ban a systemd unit from starting at all — systemctl mask / unmask</a></li>
+<li><a href="systemd/daemon-reload.html">How to make systemd re-read unit files after you edit them — systemctl daemon-reload</a></li>
+<li><a href="systemd/journalctl-unit-logs.html">How to show one unit&#x27;s logs — journalctl -u</a></li>
+<li><a href="systemd/journalctl-follow.html">How to follow systemd logs live — journalctl -f</a></li>
+<li><a href="systemd/journalctl-per-boot.html">How to read logs from a previous boot — journalctl -b</a></li>
+<li><a href="systemd/journalctl-since-until.html">How to cut a time window out of the journal — journalctl --since / --until</a></li>
+<li><a href="systemd/journalctl-priority.html">How to filter journal logs by priority — journalctl -p err</a></li>
+<li><a href="systemd/journalctl-disk-usage-vacuum.html">How to see and shrink the systemd journal&#x27;s disk use — --disk-usage, --vacuum-time</a></li>
+<li><a href="systemd/systemctl-cat-unit.html">How to see a unit exactly as systemd sees it — systemctl cat</a></li>
+<li><a href="systemd/service-unit-anatomy.html">Anatomy of a systemd .service unit file — a complete, verified example</a></li>
+<li><a href="systemd/edit-dropin-override.html">How to override a systemd unit without editing the vendor file — systemctl edit</a></li>
+<li><a href="systemd/list-dependencies.html">How to see a unit&#x27;s dependency tree — systemctl list-dependencies</a></li>
+<li><a href="systemd/failed-and-reset-failed.html">How to find and clear failed systemd units — systemctl --failed, reset-failed</a></li>
+<li><a href="systemd/list-timers.html">How to list every systemd timer and its next run — systemctl list-timers --all</a></li>
+<li><a href="systemd/timer-unit-anatomy.html">Anatomy of a systemd .timer — a daily job and its service</a></li>
+<li><a href="systemd/analyze-calendar.html">How to test a systemd calendar expression before you ship it — systemd-analyze calendar</a></li>
+<li><a href="systemd/enable-timer-not-service.html">How to enable a systemd timer — enable the TIMER, not the service</a></li>
+<li><a href="systemd/analyze-blame-critical-chain.html">How to find where boot time went — systemd-analyze blame and critical-chain</a></li>
+<li><a href="systemd/hostnamectl-timedatectl-localectl.html">hostnamectl, timedatectl, localectl — set hostname, time and locale</a></li>
 </ul>
 <footer>
 <p>All cheatsheets by <a href="https://github.com/Ezra-Zhao">Ezra-Zhao on GitHub</a> — free, MIT-licensed, in English with Chinese / Spanish / Portuguese editions.</p>

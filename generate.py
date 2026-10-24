@@ -589,6 +589,16 @@ try:
 except ImportError:
     pass
 
+# Batch 3: vim / tmux / systemd. Same contract as batch 2 — code strings in
+# pages3.py were extracted verbatim from the repos' CHEATSHEET.md files and
+# are re-verified against the sources by verify_against_sources().
+try:
+    from pages3 import REPOS3, PAGES3
+    REPOS.update(REPOS3)
+    PAGES.extend(PAGES3)
+except ImportError:
+    pass
+
 
 def norm(s):
     return " ".join(s.split())
@@ -678,8 +688,8 @@ def render_index():
     parts.append('<meta name="viewport" content="width=device-width, initial-scale=1">')
     parts.append(f"<title>{SITE_NAME} — one command, one question, one page</title>")
     parts.append('<meta name="description" content="One command, one real-world scenario, one page. '
-                 '300 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, '
-                 'the terminal, free Adobe alternatives and self-hosted SaaS replacements — '
+                 '375 question-style pages for ffmpeg, Git, Docker, curl, regex, jq, kubectl, SQL, SSH, '
+                 'Vim, tmux, systemd, the terminal, free Adobe alternatives and self-hosted SaaS replacements — '
                  'drawn from tested open-source cheatsheets.">')
     parts.append(f"<style>{CSS}</style>")
     parts.append("</head>")

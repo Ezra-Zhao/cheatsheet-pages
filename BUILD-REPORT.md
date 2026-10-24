@@ -86,3 +86,33 @@ apply-manifest · check-current-cluster · cp-copy-files · create-deployment ·
 - terminal（25）：bat-cat-with-highlighting · btop-resource-monitor · cmux-terminal-for-ai-agents · eza-modern-ls · fd-friendlier-find · find-and-search-fd-ripgrep · fzf-fuzzy-finder · git-workflow-lazygit-starship · lazygit-terminal-ui · learn-commands-tldr-fzf · monitor-with-btop-in-tmux · navigate-faster-zoxide-fzf · new-in-2026-cmux-yoinks · remote-sessions-tmux-zoxide · replace-classic-unix-tools · ripgrep-grep-rebuilt-in-rust · starship-prompt · starter-pack-one-command · tldr-man-pages-you-will-read · tmux-terminal-multiplexer · tmux-vs-zellij · view-files-eza-bat · yoinks-download-videos · zellij-modern-multiplexer · zoxide-smarter-cd
 - adobe（25）：after-effects-alternatives-compared · artcraft-suite-seven-apps · audacity-alternative-to-audition · blender-alternative-to-after-effects · darktable-alternative-to-lightroom · davinci-resolve-alternative-to-premiere · designcraft-alternative-to-indesign · effectcraft-alternative-to-after-effects · filmcraft-alternative-to-premiere · gimp-alternative-to-photoshop · illustrator-alternatives-compared · indesign-alternatives-compared · inkscape-alternative-to-illustrator · install-alternatives-on-linux · kdenlive-alternative-to-premiere · lightcraft-alternative-to-lightroom · lightroom-alternatives-compared · mature-free-creative-suite · penpot-alternative-to-figma-xd · photocraft-alternative-to-photoshop · photoshop-alternatives-compared · premiere-alternatives-compared · printcraft-alternative-to-acrobat · scribus-alternative-to-indesign · vectorcraft-alternative-to-illustrator
 - desubscribe（25）：are-these-prices-current · biggest-savings-first · cheapest-swaps-to-start · files-and-photos-stack · five-year-cost-of-subscriptions · free-tiers-honest-note · meetings-and-design-stack · notes-stack-appflowy-joplin · passwords-and-data-stack · replace-1password-with-vaultwarden · replace-airtable-with-nocodb · replace-dropbox-with-nextcloud · replace-evernote-with-joplin · replace-figma-with-penpot · replace-google-one-with-immich · replace-notion-with-appflowy · replace-slack-with-mattermost · replace-trello-with-wekan · replace-zoom-with-jitsi · run-all-ten-replacements · team-chat-and-boards-stack · team-savings-4470 · total-savings-1260-a-year · wekan-full-install-with-mongodb · what-you-need-to-self-host
+
+---
+
+# 扩仓记录（2026-10-24）：12 仓 → 15 仓，300 页 → 375 页
+
+新增 3 仓 × 25 页 = **75 页**，与前两批同模板、同质量门：
+
+| 仓 | 页数 | 内容来源 |
+|---|---|---|
+| vim | 25 | vim-cheatsheet/CHEATSHEET.md（30 条目中选 25） |
+| tmux | 25 | tmux-cheatsheet/CHEATSHEET.md（30 条目中选 25） |
+| systemd | 25 | systemd-cheatsheet/CHEATSHEET.md（30 条目中选 25） |
+
+## 实现方式
+
+- 数据文件 `pages3.py`（REPOS3 + PAGES3）：抽取脚本从三仓 CHEATSHEET.md 按条目（`###` 标题）提取围栏代码块原文组页，多块条目（如 .timer 解剖的 ini+bash 三块）按源顺序合并；说明段取条目代码块后的源 prose（去 markdown 强调符）。图卡 3 张从各仓 `cards/` 复制进 `images/`。
+- `generate.py` 改动：① 新增 pages3 合并（与 pages2 同模式）；② 首页描述改为 375 页 / 15 仓口径。
+- 未选的 5 条/仓（vim 的 gj/gk、r/~ 小修、J/:m、gv/o、:!cmd；tmux 的改会话名、CLI 建窗、save-buffer、pipe-pane、prefix ?；systemd 的 unit 路径、show -p、相对触发、get-default、reboot/isolate）留在各仓 CHEATSHEET.md 全文中，站点只取 25 页与既有规格对齐。
+
+## 质量门结果（本次）
+
+1. **逐字校验（全量，机器执行）**：375 页共 **1,088 行代码**逐行（adobe 为 fragment 子串）与 15 仓源文件比对，全部命中，构建放行（本次新增 295 行）。
+2. **结构校验**：index.html 375 条页面链接 0 缺失；sitemap.xml 376 个 URL（首页 + 375 页）；本地打开 vim/save-with-sudo-tee、systemd/timer-unit-anatomy 两页核对：图片路径、作者回链在位，无乱码替换符。
+3. **上线抽测**：push 后 curl 抽测三仓各 2 页 HTTP 状态（结果见本次 commit 后站点回读）。
+
+## 页面清单（新增 75，slug）
+
+- vim（25）：save-quit-write · quit-without-saving · x-vs-wq-mtime · save-with-sudo-tee · open-at-line-or-match · move-words-hjkl-wbe · line-anchors-and-jumps · find-char-f-t · matching-pair-and-paragraph · scroll-and-screen-anchors · insert-mode-six-doors · delete-yank-paste-counts · undo-redo-repeat · operators-motions-grammar · text-objects · searching-n-and-star · substitute-current-line · substitute-file-and-ranges · search-settings-case-highlight · global-command · visual-modes · visual-block-insert · macros-record-replay · registers-and-clipboard · survival-vimrc
+- tmux（25）：new-named-session · list-and-attach-sessions · detach-prefix-d · kill-session · new-window-and-rename · switching-windows · kill-window · swap-and-move-windows · split-panes · moving-between-panes · zoom-pane · swap-panes-and-layouts · resize-panes · kill-pane-break-pane · copy-mode-scrollback · copy-text-mode-keys · paste-buffer · capture-pane · change-prefix-ctrl-a · mouse-on · history-index-renumber-config · reload-config · friendlier-split-keys · scripting-send-keys · choose-tree-and-kill-server
+- systemd（25）：status-unit · start-stop-unit · restart-vs-reload · enable-disable-boot · enable-now · is-active-is-enabled · mask-unmask-unit · daemon-reload · journalctl-unit-logs · journalctl-follow · journalctl-per-boot · journalctl-since-until · journalctl-priority · journalctl-disk-usage-vacuum · systemctl-cat-unit · service-unit-anatomy · edit-dropin-override · list-dependencies · failed-and-reset-failed · list-timers · timer-unit-anatomy · analyze-calendar · enable-timer-not-service · analyze-blame-critical-chain · hostnamectl-timedatectl-localectl
