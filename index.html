@@ -473,6 +473,35 @@ ul.pages li:last-child{border-bottom:none}
 <li><a href="systemd/analyze-blame-critical-chain.html">How to find where boot time went — systemd-analyze blame and critical-chain</a></li>
 <li><a href="systemd/hostnamectl-timedatectl-localectl.html">hostnamectl, timedatectl, localectl — set hostname, time and locale</a></li>
 </ul>
+<h2>find + xargs Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/find-xargs-cheatsheet">https://github.com/Ezra-Zhao/find-xargs-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="find-xargs/find-files-by-extension.html">How to find all files with an extension — find -name</a></li>
+<li><a href="find-xargs/find-files-case-insensitive-name.html">How to find files by name ignoring case — find -iname</a></li>
+<li><a href="find-xargs/find-files-directories-symlinks-type.html">How to find only files, only directories, or only symlinks — find -type</a></li>
+<li><a href="find-xargs/find-by-path-pattern.html">How to match the whole path, not just the name — find -path</a></li>
+<li><a href="find-xargs/limit-how-deep-find-searches.html">How to limit search depth — -maxdepth and -mindepth</a></li>
+<li><a href="find-xargs/find-large-files-disk-hogs.html">How to find the big files eating the disk — find -size +1M</a></li>
+<li><a href="find-xargs/find-small-files-size-rounding.html">How to find small files — and the -size rounding trap</a></li>
+<li><a href="find-xargs/find-files-modified-recently.html">How to find files modified in the last 7 days / 60 minutes — -mtime, -mmin</a></li>
+<li><a href="find-xargs/find-files-newer-than-reference.html">How to find files newer than a reference file — -newer</a></li>
+<li><a href="find-xargs/find-empty-files-and-directories.html">How to find empty files and empty directories — -empty</a></li>
+<li><a href="find-xargs/find-files-by-permissions.html">How to find files by permission bits — -perm, three ways</a></li>
+<li><a href="find-xargs/find-files-with-regex.html">How to find files with a regular expression — find -regex</a></li>
+<li><a href="find-xargs/combine-find-conditions-or-not.html">How to combine find conditions — OR, NOT, and the -print trap</a></li>
+<li><a href="find-xargs/run-command-on-every-found-file.html">How to run a command once per file — find -exec ... \;</a></li>
+<li><a href="find-xargs/batch-files-into-one-command-exec-plus.html">How to batch found files into few command runs — find -exec ... {} +</a></li>
+<li><a href="find-xargs/run-command-inside-each-files-directory.html">How to run a command inside each file&#x27;s own directory — -execdir</a></li>
+<li><a href="find-xargs/ask-before-running-on-found-files.html">How to rehearse a destructive find command — -ok asks first</a></li>
+<li><a href="find-xargs/print-file-size-and-path-printf.html">How to print exactly the fields you want — find -printf</a></li>
+<li><a href="find-xargs/preview-matches-then-delete-safely.html">How to delete found files safely — preview with -ls, then -delete</a></li>
+<li><a href="find-xargs/search-inside-files-found-by-find.html">How to search inside the files find returns — find | xargs grep</a></li>
+<li><a href="find-xargs/filenames-with-spaces-print0-xargs-0.html">How to survive filenames with spaces — -print0 and xargs -0</a></li>
+<li><a href="find-xargs/xargs-limit-arguments-per-run.html">How to cap arguments per command run — xargs -n</a></li>
+<li><a href="find-xargs/xargs-place-each-item-in-template.html">How to put each item exactly where you want it — xargs -I{}</a></li>
+<li><a href="find-xargs/xargs-run-commands-in-parallel.html">How to run the batch in parallel — xargs -P</a></li>
+<li><a href="find-xargs/xargs-do-nothing-on-empty-input.html">How to stop xargs running once on empty input — xargs -r</a></li>
+</ul>
 <footer>
 <p>All cheatsheets by <a href="https://github.com/Ezra-Zhao">Ezra-Zhao on GitHub</a> — free, MIT-licensed, in English with Chinese / Spanish / Portuguese editions.</p>
 </footer>

@@ -599,6 +599,16 @@ try:
 except ImportError:
     pass
 
+# Batch 4: find + xargs. Same contract — code strings in pages4.py were
+# transcribed verbatim from the repo's CHEATSHEET.md (every entry there was
+# run-verified) and are re-checked by verify_against_sources().
+try:
+    from pages4 import REPOS4, PAGES4
+    REPOS.update(REPOS4)
+    PAGES.extend(PAGES4)
+except ImportError:
+    pass
+
 
 def norm(s):
     return " ".join(s.split())
