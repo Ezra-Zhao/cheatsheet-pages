@@ -609,6 +609,16 @@ try:
 except ImportError:
     pass
 
+# Batch 5: awk. Same contract — code strings in pages5.py were
+# transcribed verbatim from the repo's CHEATSHEET.md (every entry there was
+# run-verified) and are re-checked by verify_against_sources().
+try:
+    from pages5 import REPOS5, PAGES5
+    REPOS.update(REPOS5)
+    PAGES.extend(PAGES5)
+except ImportError:
+    pass
+
 
 def norm(s):
     return " ".join(s.split())

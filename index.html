@@ -502,6 +502,35 @@ ul.pages li:last-child{border-bottom:none}
 <li><a href="find-xargs/xargs-run-commands-in-parallel.html">How to run the batch in parallel — xargs -P</a></li>
 <li><a href="find-xargs/xargs-do-nothing-on-empty-input.html">How to stop xargs running once on empty input — xargs -r</a></li>
 </ul>
+<h2>awk Cheatsheet — 25 pages</h2>
+<p class="intro">Full cheatsheet: <a href="https://github.com/Ezra-Zhao/awk-cheatsheet">https://github.com/Ezra-Zhao/awk-cheatsheet</a></p>
+<ul class="pages">
+<li><a href="awk/print-lines-and-fields.html">How to print whole lines and picked fields — awk print, $1, $NF</a></li>
+<li><a href="awk/nr-vs-fnr-line-counters.html">How to number lines across files — NR vs FNR in awk</a></li>
+<li><a href="awk/begin-and-end-blocks.html">How to run setup and summary code — BEGIN and END in awk</a></li>
+<li><a href="awk/pattern-alone-action-alone.html">How awk defaults work — a pattern alone prints, an action alone runs everywhere</a></li>
+<li><a href="awk/pass-variables-with-minus-v.html">How to hand values into awk — -v, and the n+0 count trick</a></li>
+<li><a href="awk/match-lines-by-regex.html">How to print lines matching a pattern — awk /regex/</a></li>
+<li><a href="awk/range-pattern-between-markers.html">How to print a block between two markers — awk range patterns</a></li>
+<li><a href="awk/numeric-vs-string-comparison.html">How awk comparisons pick a type — numbers vs strings</a></li>
+<li><a href="awk/field-match-tilde-operators.html">How to match one field, not the line — awk ~ and !~</a></li>
+<li><a href="awk/combine-conditions-and-or-not.html">How to combine tests in awk — &amp;&amp;, || and !</a></li>
+<li><a href="awk/skip-header-of-every-file.html">How to skip every file&#x27;s header — FNR &gt; 1 in awk</a></li>
+<li><a href="awk/choose-the-field-separator.html">How to split on a different separator — awk -F and FS</a></li>
+<li><a href="awk/rebuild-record-ofs-normalize-whitespace.html">How assigning a field rebuilds the line — OFS and the $1=$1 trick</a></li>
+<li><a href="awk/line-length-and-longest-line.html">How to measure lines and find the longest — awk length()</a></li>
+<li><a href="awk/extract-substring-by-position.html">How to cut text out of a field — awk substr()</a></li>
+<li><a href="awk/split-a-field-into-pieces.html">How to chop a string into an array — awk split()</a></li>
+<li><a href="awk/sub-and-gsub-replace.html">How to replace text by regex — awk sub() and gsub()</a></li>
+<li><a href="awk/printf-and-sprintf-formatting.html">How to format output precisely — awk printf and sprintf</a></li>
+<li><a href="awk/match-extract-with-rstart-rlength.html">How to find AND extract a match — awk match(), RSTART, RLENGTH</a></li>
+<li><a href="awk/toupper-and-index-contains.html">How to case-fold and test &#x27;contains&#x27; — toupper() and index() in awk</a></li>
+<li><a href="awk/sum-and-average-a-column.html">How to sum and average a column — the awk accumulator</a></li>
+<li><a href="awk/dedupe-lines-keep-order.html">How to remove duplicate lines, keeping order — awk &#x27;!seen[$0]++&#x27;</a></li>
+<li><a href="awk/group-by-sum-and-word-frequency.html">How to group and count with arrays — awk GROUP BY and word frequency</a></li>
+<li><a href="awk/join-two-files-nr-fnr-idiom.html">How to join two files on a key — the NR == FNR idiom</a></li>
+<li><a href="awk/csv-reorder-columns-and-quote-warning.html">How to pull CSV columns in a new order — and where awk CSV breaks</a></li>
+</ul>
 <footer>
 <p>All cheatsheets by <a href="https://github.com/Ezra-Zhao">Ezra-Zhao on GitHub</a> — free, MIT-licensed, in English with Chinese / Spanish / Portuguese editions.</p>
 </footer>
