@@ -619,6 +619,16 @@ try:
 except ImportError:
     pass
 
+# Batch 6: grep. Same contract — code strings in pages6.py were
+# transcribed verbatim from the repo's CHEATSHEET.md (every entry there was
+# run-verified) and are re-checked by verify_against_sources().
+try:
+    from pages6 import REPOS6, PAGES6
+    REPOS.update(REPOS6)
+    PAGES.extend(PAGES6)
+except ImportError:
+    pass
+
 
 def norm(s):
     return " ".join(s.split())
